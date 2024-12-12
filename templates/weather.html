@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<center>
+    <div class="container mt-5">
+        {% if error %}
+        {{error}}
+        <div class="container">
+            <a href="/"><button class="btn btn-outline-dark w-100" type="button">Search Another City</button></a>
+        </div>
+
+        {% else %}
+
+
+        <div class="weather-card">
+            <!-- Display weather dynamically -->
+            <h1>{{ weather.city }}</h1>
+            <h2>{{ weather.temperature }}°C</h2>
+            <p>{{ weather.condition }}</p>
+            <img src="{{ weather.icon_url }}" alt="Weather Icon">
+            <div class="mt-3">
+                <p><strong>Feels like:</strong> {{ weather.feels_like }}°F</p>
+                <p><strong>Humidity:</strong> {{ weather.humidity }}%</p>
+                <p><strong>Wind Speed:</strong> {{ weather.wind_speed }} km/h</p>
+            </div>
+            <a href="/"><button class="btn btn-outline-dark w-100" type="button">Search Another City</button></a>
+        </div>
+    </div>
+</center>
+{% endif %}
+{% endblock body %}

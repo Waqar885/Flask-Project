@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="container">
+    <h1 class="text-center mb-4">Check the Weather</h1>
+    <form action="/weather" method="POST">
+        <div class="mb-3">
+            <label for="City" class="form-label">Enter Location</label>
+            <input type="text" class="form-control" id="City" name="city" placeholder="e.g., Karachi, New York"
+                required>
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Get Weather</button>
+    </form>
+</div>
+
+{% endblock body %}
